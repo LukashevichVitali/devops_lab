@@ -1,4 +1,5 @@
 line_1 = input().split()
 line_2 = input().split()
-final_list = line_1 + line_2
-print(' '.join(x for x in set(final_list) if final_list.count(x) > 1))
+final_list = [x for x in line_1 if x in line_2]
+final_list = list(dict.fromkeys(final_list))
+print(' '.join(map(str, final_list)))
