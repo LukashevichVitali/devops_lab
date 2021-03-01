@@ -10,8 +10,8 @@ def get_pulls(state):
         response = requests.get(url, params=count_pages, auth=credentials)
         pull = response.json()
     elif state == "needs work" or state == "accepted":
-        url = 'https://api.github.com/search/issues?q=is:pr%20' \
-                f'label:\"{state}\"%20repo:alenaPy/devops_lab'
+        url = 'https://api.github.com/search/issues?q=is:pr%20'\
+              f'label:\"{state}\"%20repo:alenaPy/devops_lab'
         response = requests.get(url, params=count_pages, auth=credentials)
         pull = response.json()['items']
     else:
